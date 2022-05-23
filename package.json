@@ -2,10 +2,10 @@
   "name": "@powerfulyang/leetcode",
   "version": "0.0.0",
   "devDependencies": {
-    "@powerfulyang/lint": "1.0.2"
+    "@powerfulyang/lint": "2.0.1"
   },
   "scripts": {
-    "prepare": "husky install",
+    "postprepare": "husky install",
     "precommit": "lint-staged"
   },
   "author": "powerfulyang <i@powerfulyang.com>",
