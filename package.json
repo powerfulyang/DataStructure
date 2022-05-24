@@ -2,7 +2,7 @@
   "name": "@powerfulyang/leetcode",
   "version": "0.0.0",
   "devDependencies": {
-    "@powerfulyang/lint": "2.0.1"
+    "@powerfulyang/lint": "2.0.2"
   },
   "scripts": {
     "postprepare": "husky install",
