@@ -90,10 +90,6 @@ export class Tree<T> {
     return this.isBalancedNode(this.root);
   }
 
-  balanceTree() {
-    // todo
-  }
-
   private postOrderTraverseNode(node: TreeNode<T> | null, callback: (data: T) => void): void {
     if (node === null) {
       return;
