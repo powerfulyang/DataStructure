@@ -10,7 +10,7 @@ export class TreeNode<T> {
     public l: TreeNode<T> | null = null,
     public r: TreeNode<T> | null = null,
   ) {
-    this.val = v;
+    this.val = v || null;
     this.left = l;
     this.right = r;
   }
