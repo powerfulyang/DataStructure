@@ -1,6 +1,6 @@
 import { BinarySearch } from './BinarySearch';
 import { InterpolationSearch } from './InterpolationSearch';
-import { RemoveDuplicatesFromSortedArray, RemoveElement } from './TwoPointers';
+import { RemoveDuplicatesFromSortedArray, RemoveElement } from '../Two Pointers';
 
 describe('List', () => {
   it('binary search', () => {
