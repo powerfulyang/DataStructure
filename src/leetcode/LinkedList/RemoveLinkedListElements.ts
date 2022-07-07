@@ -12,12 +12,11 @@ export const RemoveLinkedListElements = (
   }
 
   let node = head;
-  while (node && node.value === val) {
+  while (node.next) {
+    if (node.next.value === val) {
+      node.next = node.next.next;
+    }
     node = node.next;
-  }
-
-  if (!node) {
-    return null;
   }
 
   return head;
