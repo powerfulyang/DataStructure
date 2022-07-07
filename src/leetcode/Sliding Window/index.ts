@@ -33,6 +33,30 @@ export const MinimumSizeSubarraySum = (s: number, nums: number[]): number => {
  */
 export const MinimumWindowSubstring = (s: string, t: string): string => {
   // s = "ADOBECODEBANC", t = "ABC"
+  // left = 0, right = 0, need = {A: 0, B: 1, C: 1} , needType = 2. res = ''  A
+  // left = 0, right = 1, need = {A: 0, B: 1, C: 1} , needType = 2. res = ''  D
+  // left = 0, right = 2, need = {A: 0, B: 1, C: 1} , needType = 2. res = ''  O
+  // left = 0, right = 3, need = {A: 0, B: 0, C: 1} , needType = 1. res = ''  B
+  // left = 0, right = 4, need = {A: 0, B: 0, C: 1} , needType = 1. res = ''  E
+  // left = 0, right = 5, need = {A: 0, B: 0, C: 0} , needType = 1. res = 'ADOBEC'  C
+  // left = 1, right = 5, need = {A: 1, B: 0, C: 0} , needType = 1. res = 'ADOBEC'  remove A
+  // left = 1, right = 6, need = {A: 1, B: 0, C: 0} , needType = 1. res = 'ADOBEC'  O
+  // left = 1, right = 7, need = {A: 1, B: 0, C: 0} , needType = 1. res = 'ADOBEC'  D
+  // left = 1, right = 8, need = {A: 1, B: 0, C: 0} , needType = 1. res = 'ADOBEC'  E
+  // left = 1, right = 9, need = {A: 1, B: -1, C: 0} , needType = 1. res = 'ADOBEC'  B
+  // left = 1, right = 10, need = {A: 0, B: -1, C: 0} , needType = 0. res = 'ADOBEC'  A
+  // left = 2, right = 10, need = {A: 0, B: -1, C: 0} , needType = 0. res = 'ADOBEC'  remove D
+  // left = 3, right = 10, need = {A: 0, B: -1, C: 0} , needType = 0. res = 'ADOBEC'  remove O
+  // left = 4, right = 10, need = {A: 0, B: 0, C: 0} , needType = 0. res = 'ADOBEC'  remove B
+  // left = 5, right = 10, need = {A: 0, B: 0, C: 0} , needType = 0. res = 'CODEB'  remove E
+  // left = 6, right = 10, need = {A: 0, B: 0, C: 1} , needType = 1. res = 'CODEB'  remove C
+  // left = 6, right = 11, need = {A: 0, B: 0, C: 1} , needType = 1. res = 'CODEB'  N
+  // left = 6, right = 12, need = {A: 0, B: 0, C: 0} , needType = 0. res = 'CODEB'  C
+  // left = 7, right = 12, need = {A: 0, B: 0, C: 0} , needType = 0. res = 'CODEB'  remove O
+  // left = 8, right = 12, need = {A: 0, B: 0, C: 0} , needType = 0. res = 'CODEB'  remove D
+  // left = 9, right = 12, need = {A: 0, B: 0, C: 0} , needType = 0. res = 'BANC'  remove E
+  // left = 10, right = 12, need = {A: 0, B: 1, C: 0} , needType = 0. res = 'BANC'  remove B
+  // left = 10, right = 13, break while loop
 
   let l = 0;
   let r = 0;
