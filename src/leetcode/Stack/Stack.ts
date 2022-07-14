@@ -28,4 +28,8 @@ export class Stack<T = any> {
   toArray() {
     return this._stack;
   }
+
+  peek() {
+    return this._stack[0];
+  }
 }
