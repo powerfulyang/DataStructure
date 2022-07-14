@@ -41,6 +41,17 @@ export const ImplementStrStr = (haystack: string, needle: string): number => {
   let j = 0;
   for (let i = 0; i < haystack.length; i++) {
     while (j > 0 && haystack[i] !== needle[j]) {
+      // ababbabababdabbac, abaaba next=[0,0,1,1,2,3]
+      // 0123456789
+      // i = 2, j = 2
+      // i = 3，j = 0
+      // i = 4，j = 0
+      // i = 5，j = 1
+      // i = 6，j = 2
+      // i = 7，j = 3 // next 数组的作用，回退可以是 j 匹配多一个。
+      // i = 8，j = 1
+      // i = 9，j = 2
+      // i = 10，j = 1 // ...
       j = next[j - 1];
     }
     if (haystack[i] === needle[j]) {
