@@ -48,7 +48,7 @@ export const ImplementStrStr = (haystack: string, needle: string): number => {
       // i = 4，j = 0
       // i = 5，j = 1
       // i = 6，j = 2
-      // i = 7，j = 3 // next 数组的作用，回退可以是 j 匹配多一个。
+      // i = 7，j = 3 // next 数组的作用，最大相同前后缀可以直接跳过
       // i = 8，j = 1
       // i = 9，j = 2
       // i = 10，j = 1 // ...
