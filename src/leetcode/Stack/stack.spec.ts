@@ -1,5 +1,7 @@
 import { StackImplementByQueue } from './StackImplementByQueue';
 import { ValidParentheses } from './ValidParentheses';
+import { EvaluateReversePolishNotation } from './EvaluateReversePolishNotation';
+import { SimplifyPath } from './SimplifyPath';
 
 describe('stack', () => {
   it('StackImplementByQueue', () => {
@@ -18,5 +20,15 @@ describe('stack', () => {
     expect(ValidParentheses('()')).toBe(true);
     expect(ValidParentheses('()[]{}')).toBe(true);
     expect(ValidParentheses('(]')).toBe(false);
+  });
+
+  it('EvaluateReversePolishNotation', () => {
+    expect(EvaluateReversePolishNotation(['2', '1', '+', '3', '*'])).toBe(9);
+  });
+
+  it('Simplify Path', () => {
+    expect(SimplifyPath('/home/')).toBe('/home');
+    expect(SimplifyPath('/../')).toBe('/');
+    expect(SimplifyPath('/home//foo/')).toBe('/home/foo');
   });
 });

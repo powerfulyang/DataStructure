@@ -1,23 +1,25 @@
 import { BubbleSort } from './BubbleSort';
 import { QuickSort } from './QuickSort';
 import { CountingSort } from './CountingSort';
+import { BucketSort } from './BucketSort';
 
 describe('sort', () => {
+  const unsortedArray = [1, 3, -1, -3, 5, 3, 6, 7];
+  const sortedArray = [-3, -1, 1, 3, 3, 5, 6, 7];
+
   it('BubbleSort', () => {
-    const array = [5, 2, 4, 6, 1, 3];
-    const result = BubbleSort(array);
-    expect(result).toEqual([1, 2, 3, 4, 5, 6]);
+    expect(BubbleSort(unsortedArray)).toEqual(sortedArray);
   });
 
   it('QuickSort', () => {
-    const array = [5, 2, 4, 6, 1, 3];
-    const result = QuickSort(array);
-    expect(result).toEqual([1, 2, 3, 4, 5, 6]);
+    expect(QuickSort(unsortedArray)).toEqual(sortedArray);
   });
 
   it('CountingSort', () => {
-    const array = [5, 2, 4, 6, 1, 3];
-    const result = CountingSort(array);
-    expect(result).toEqual([1, 2, 3, 4, 5, 6]);
+    expect(CountingSort(unsortedArray)).toEqual(sortedArray);
+  });
+
+  it('BucketSort', () => {
+    expect(BucketSort(unsortedArray, 3)).toEqual(sortedArray);
   });
 });

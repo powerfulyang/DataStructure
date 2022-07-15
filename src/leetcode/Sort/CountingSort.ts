@@ -1,7 +1,7 @@
 export const CountingSort = (originalArray, smallestElement?, biggestElement?) => {
   // Init biggest and smallest elements in array in order to build number bucket array later.
-  let detectedSmallestElement = smallestElement || 0;
-  let detectedBiggestElement = biggestElement || 0;
+  let detectedSmallestElement = smallestElement || originalArray[0];
+  let detectedBiggestElement = biggestElement || originalArray[0];
 
   if (smallestElement === undefined || biggestElement === undefined) {
     originalArray.forEach((element) => {
@@ -13,7 +13,7 @@ export const CountingSort = (originalArray, smallestElement?, biggestElement?) =
       }
 
       // Detect smallest element.
-      if (element < detectedSmallestElement) {
+      if (element < detectedSmallestElement || detectedSmallestElement === undefined) {
         detectedSmallestElement = element;
       }
     });
