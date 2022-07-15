@@ -6,7 +6,9 @@
   },
   "scripts": {
     "postprepare": "husky install",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "author": "powerfulyang <i@powerfulyang.com>",
   "license": "Apache-2.0",

@@ -21,7 +21,7 @@ export const CountingSort = (originalArray, smallestElement?, biggestElement?) =
 
   // Init buckets array.
   // This array will hold frequency of each number from originalArray.
-  const buckets = Array(detectedBiggestElement - detectedSmallestElement + 1).fill(0);
+  const buckets = new Array(detectedBiggestElement - detectedSmallestElement + 1).fill(0);
   // origin array is [5, 2, 4, 6, 1, 3], biggestElement is 6, smallestElement is 1
   // buckets is [0, 0, 0, 0, 0, 0]
 
@@ -48,7 +48,7 @@ export const CountingSort = (originalArray, smallestElement?, biggestElement?) =
   // buckets is [0, 1, 2, 3, 4, 5]
 
   // Now let's assemble sorted array.
-  const sortedArray = Array(originalArray.length).fill(null);
+  const sortedArray = new Array(originalArray.length);
   for (let elementIndex = 0; elementIndex < originalArray.length; elementIndex += 1) {
     // Get the element that we want to put into correct sorted position.
     const element = originalArray[elementIndex];
