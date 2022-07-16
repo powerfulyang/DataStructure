@@ -5,12 +5,8 @@ export class TreeNode<T> {
 
   public right: TreeNode<T> | null;
 
-  constructor(
-    public v: T,
-    public l: TreeNode<T> | null = null,
-    public r: TreeNode<T> | null = null,
-  ) {
-    this.val = v || null;
+  constructor(v: T, l: TreeNode<T> | null = null, r: TreeNode<T> | null = null) {
+    this.val = v;
     this.left = l;
     this.right = r;
   }

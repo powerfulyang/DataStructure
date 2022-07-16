@@ -1,7 +1,10 @@
-import { Tree } from './Tree';
 import type { TreeNode } from './TreeNode';
+import { BinarySearchTree } from './BinarySearchTree';
 
-export class AVLTree<T> extends Tree<T> {
+/**
+ * 平衡二叉搜索树
+ */
+export class AVLTree<T> extends BinarySearchTree<T> {
   constructor(data: T[]) {
     super(data);
     this.balance(this.root);

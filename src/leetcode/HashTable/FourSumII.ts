@@ -1,12 +1,7 @@
 /**
  * #454, https://leetcode.cn/problems/4sum-ii/
  */
-export const FourSumCountII = (
-  nums1: number[],
-  nums2: number[],
-  nums3: number[],
-  nums4: number[],
-) => {
+export const FourSumII = (nums1: number[], nums2: number[], nums3: number[], nums4: number[]) => {
   const helperMap = new Map<number, number>();
   let resNum = 0;
   let tempVal: number | undefined;
