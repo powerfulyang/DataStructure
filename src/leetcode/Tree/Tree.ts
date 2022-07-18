@@ -140,12 +140,12 @@ export class Tree<T> {
     return root;
   }
 
-  static depthNode<T>(node: TreeNode<T> | null): number {
+  static maxDepthNode<T>(node: TreeNode<T> | null): number {
     if (node === null) {
       return 0;
     }
-    const left = Tree.depthNode(node.left);
-    const right = Tree.depthNode(node.right);
+    const left = Tree.maxDepthNode(node.left);
+    const right = Tree.maxDepthNode(node.right);
     return Math.max(left, right) + 1;
   }
 
@@ -168,8 +168,8 @@ export class Tree<T> {
     if (node === null) {
       return true;
     }
-    const left = Tree.depthNode(node.left);
-    const right = Tree.depthNode(node.right);
+    const left = Tree.maxDepthNode(node.left);
+    const right = Tree.maxDepthNode(node.right);
     return (
       Math.abs(left - right) <= 1 &&
       Tree.isBalancedNode(node.left) &&
@@ -206,7 +206,9 @@ export class Tree<T> {
 
   /**
    * 广度优先
+   *
    * Breadth-First Traversal
+   *
    * BFS
    */
   public levelOrderTraverse(callback: (data: T) => void) {
@@ -215,8 +217,11 @@ export class Tree<T> {
 
   /**
    * 深度优先
+   *
    * 前序递归遍历
+   *
    * Pre-Order Traversal
+   *
    * 先访问根节点，再访问子树
    */
   public preOrderTraverse(callback: (data: T) => void): void {
@@ -246,8 +251,8 @@ export class Tree<T> {
   /**
    * 树的深度
    */
-  public depth(): number {
-    return Tree.depthNode(this.root);
+  public maxDepth(): number {
+    return Tree.maxDepthNode(this.root);
   }
 
   /**

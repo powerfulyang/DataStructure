@@ -1,9 +1,11 @@
 import { Tree } from './Tree';
 import { BinarySearchTree } from './BinarySearchTree';
 import { AllPossibleFullBinaryTrees } from './FullBinaryTree';
+import { CompleteBinaryTree } from './CompleteBinaryTree';
 
 describe('tree', () => {
   const tree = new Tree([5, 3, 7, 1, 4, null, 8]);
+  const completeBinaryTree = new CompleteBinaryTree([1, 2, 3, 4, 5, 6, 7, 8]);
 
   it('Pre-Order Traverse', () => {
     const result = [];
@@ -69,5 +71,11 @@ describe('tree', () => {
 
   it('should pass the test case', () => {
     expect(Tree.BinaryTreeLevelOrderTraverse(tree.root)).toEqual([[5], [3, 7], [1, 4, 8]]);
+  });
+
+  it('completeBinaryTree', () => {
+    expect(completeBinaryTree.maxDepth()).toBe(4);
+    expect(completeBinaryTree.minDepth()).toBe(3);
+    expect(completeBinaryTree.countNodes()).toBe(8);
   });
 });
