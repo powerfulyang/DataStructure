@@ -4,7 +4,7 @@ export class Tree<T> {
   public root: TreeNode<T> | null = null;
 
   constructor(data?: T[]) {
-    if (data.length) {
+    if (data?.length) {
       this.root = Tree.ConstructFromLevelOrderTraverse(data);
     }
   }

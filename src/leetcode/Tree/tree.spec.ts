@@ -2,6 +2,7 @@ import { Tree } from './Tree';
 import { BinarySearchTree } from './BinarySearchTree';
 import { AllPossibleFullBinaryTrees } from './FullBinaryTree';
 import { CompleteBinaryTree } from './CompleteBinaryTree';
+import { AVLTree } from './AVLTree';
 
 describe('tree', () => {
   const tree = new Tree([5, 3, 7, 1, 4, null, 8]);
@@ -77,5 +78,12 @@ describe('tree', () => {
     expect(completeBinaryTree.maxDepth()).toBe(4);
     expect(completeBinaryTree.minDepth()).toBe(3);
     expect(completeBinaryTree.countNodes()).toBe(8);
+  });
+
+  it('AVLTree', () => {
+    const avlTree = new AVLTree([1, 2, 3]);
+    const bst = new BinarySearchTree([1, 2, 3]);
+    expect(Tree.isSameTree(avlTree.root, bst.root)).toBe(false);
+    expect(avlTree.isBalanced()).toBe(true);
   });
 });

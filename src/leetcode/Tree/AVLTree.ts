@@ -5,11 +5,6 @@ import { BinarySearchTree } from './BinarySearchTree';
  * 平衡二叉搜索树
  */
 export class AVLTree<T> extends BinarySearchTree<T> {
-  constructor(data: T[]) {
-    super(data);
-    this.balance(this.root);
-  }
-
   insert(data: T) {
     super.insert(data);
     this.balance(this.root);
@@ -30,25 +25,22 @@ export class AVLTree<T> extends BinarySearchTree<T> {
         this.rotateRight(node.right);
       }
       this.rotateLeft(node);
-    } else {
-      this.balance(node.left);
-      this.balance(node.right);
     }
+    this.balance(node.left);
+    this.balance(node.right);
   }
 
-  private rotateLeft(node: TreeNode<T>): void {
-    const { right } = node;
-    // eslint-disable-next-line no-param-reassign
-    node.right = right.left;
-    right.left = node;
+  private rotateLeft(draft: TreeNode<T>): void {
+    const { right } = draft;
+    draft.right = right.left;
+    right.left = draft;
     this.root = right;
   }
 
-  private rotateRight(node: TreeNode<T>): void {
-    const { left } = node;
-    // eslint-disable-next-line no-param-reassign
-    node.left = left.right;
-    left.right = node;
+  private rotateRight(draft: TreeNode<T>): void {
+    const { left } = draft;
+    draft.left = left.right;
+    left.right = draft;
     this.root = left;
   }
 

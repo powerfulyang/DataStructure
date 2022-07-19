@@ -3,10 +3,15 @@ import { TreeNode } from './TreeNode';
 
 // For a BST, inorder traversal is the sorted order of the elements.
 export class BinarySearchTree<T> extends Tree<T> {
+  constructor(data?: T[]) {
+    super();
+    data?.map((d) => this.insert(d));
+  }
+
   /**
    * inset a node to the tree
    * BST, Binary Search Tree
-   * @param data
+   * #701, https://leetcode.cn/problems/insert-into-a-binary-search-tree/
    */
   public insert(data: T): void {
     const node = new TreeNode<T>(data);
