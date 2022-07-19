@@ -1,4 +1,4 @@
-import { Heap } from './index';
+import { MaxHeap } from './MaxHeap';
 
 /**
  * Find the kth-largest element in an unsorted array. Note that it is the kth-largest element in the sorted order, not the kth distinct element.
@@ -12,7 +12,7 @@ import { Heap } from './index';
  * You may assume k is always valid, 1 ≤ k ≤ array's length.
  */
 export const findKthLargest = (nums: number[], k: number): number => {
-  const heap = new Heap();
+  const heap = new MaxHeap();
   for (let i = 0; i < k; i++) {
     heap.offer(nums[i]);
   }

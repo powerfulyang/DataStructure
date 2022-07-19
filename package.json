@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "postprepare": "husky install",
-    "precommit": "lint-staged",
+    "precommit": "npm run tsc-check && lint-staged",
     "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "tsc-check": "tsc --noEmit"
   },
   "author": "powerfulyang <i@powerfulyang.com>",
   "license": "Apache-2.0",
