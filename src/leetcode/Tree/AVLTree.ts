@@ -44,6 +44,9 @@ export class AVLTree<T> extends BinarySearchTree<T> {
     this.root = left;
   }
 
+  /**
+   * @returns positive if left is higher, negative if right is higher, 0 if equal
+   */
   private getBalance(node: TreeNode<T>): number {
     if (node === null) {
       return 0;
