@@ -2,6 +2,7 @@ import { Combinations } from './Combinations';
 import { CombinationSum3 } from './CombinationSumIII';
 import { LetterCombinationsOfAPhoneNumber } from './LetterCombinationsOfAPhoneNumber';
 import { CombinationSum } from './CombinationSum';
+import { PalindromePartitioning } from './palindrome-partitioning';
 
 describe('backtracking', () => {
   it('Combinations', () => {
@@ -62,6 +63,19 @@ describe('backtracking', () => {
       [2, 2, 2, 2],
       [2, 3, 3],
       [3, 5],
+    ]);
+  });
+
+  it('PalindromePartitioning', () => {
+    expect(PalindromePartitioning('aab')).toEqual([
+      ['a', 'a', 'b'],
+      ['aa', 'b'],
+    ]);
+    expect(PalindromePartitioning('aabb')).toIncludeSameMembers([
+      ['a', 'a', 'b', 'b'],
+      ['aa', 'b', 'b'],
+      ['a', 'a', 'bb'],
+      ['aa', 'bb'],
     ]);
   });
 });
