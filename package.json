@@ -15,6 +15,6 @@
   },
   "devDependencies": {
     "@powerfulyang/lint": "2.0.2",
-    "jest-extended": "3.0.1"
+    "jest-extended": "3.0.2"
   }
 }
