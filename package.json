@@ -1,6 +1,6 @@
 {
-  "name": "@powerfulyang/leetcode",
-  "version": "0.0.0",
+  "name": "@powerfulyang/leraning-notes",
+  "version": "1.0.0",
   "scripts": {
     "postprepare": "husky install",
     "precommit": "npm run tsc-check && lint-staged",
@@ -10,11 +10,12 @@
   },
   "author": "powerfulyang <i@powerfulyang.com>",
   "license": "Apache-2.0",
+  "devDependencies": {
+    "@powerfulyang/lint": "3.1.0",
+    "jest-extended": "latest",
+    "typescript": "latest"
+  },
   "dependencies": {
     "rxjs": "7.5.6"
-  },
-  "devDependencies": {
-    "@powerfulyang/lint": "2.0.2",
-    "jest-extended": "3.0.1"
   }
 }

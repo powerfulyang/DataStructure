@@ -1,10 +1,9 @@
-/**
- * @type {import('ts-jest').InitialOptionsTsJest}
- */
-module.exports = {
-  testEnvironment: 'node',
-  preset: 'ts-jest',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|js)x?$',
+/** @type {import('@jest/types').Config.InitialOptions} */
+const config = {
+  transform: {
+    '^.+\\.ts$': '@swc/jest',
+  },
   setupFilesAfterEnv: ['jest-extended/all'],
 };
+
+module.exports = config;
