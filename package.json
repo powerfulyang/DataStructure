@@ -11,7 +11,7 @@
   "author": "powerfulyang <i@powerfulyang.com>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@powerfulyang/lint": "3.0.0",
+    "@powerfulyang/lint": "3.1.0",
     "jest-extended": "3.0.1",
     "typescript": "latest"
   },
