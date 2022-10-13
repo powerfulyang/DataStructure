@@ -1,5 +1,6 @@
 import { romanToInt } from './RomanToInteger';
 import { strToObject } from './StrToObject';
+import { CurryMultiply } from './CurryMultiply';
 
 describe('easy', () => {
   it('Roman to Integer', () => {
@@ -14,5 +15,13 @@ describe('easy', () => {
         },
       },
     });
+  });
+
+  it('CurryMultiply', () => {
+    const result = CurryMultiply(1)(2)(3);
+    // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+    expect(result + 1).toEqual(7);
+    expect(result()).toEqual(6);
   });
 });
