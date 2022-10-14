@@ -12,10 +12,12 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "@powerfulyang/lint": "3.1.0",
+    "@types/lodash": "4.14.186",
     "jest-extended": "latest",
     "typescript": "latest"
   },
   "dependencies": {
+    "lodash": "4.17.21",
     "rxjs": "7.5.7"
   }
 }
