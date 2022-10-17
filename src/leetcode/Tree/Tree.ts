@@ -1,4 +1,5 @@
 import { TreeNode } from './TreeNode';
+import { Stack } from '../Stack/Stack';
 
 export class Tree<T> {
   public root: TreeNode<T> | null = null;
@@ -186,13 +187,16 @@ export class Tree<T> {
     callback(node.val);
   }
 
-  static preOrderTraverseNode<T>(node: TreeNode<T> | null, callback: (data: T) => void): void {
+  static preOrderTraverseRecurseNode<T>(
+    node: TreeNode<T> | null,
+    callback: (data: T) => void,
+  ): void {
     if (node === null) {
       return;
     }
     callback(node.val);
-    Tree.preOrderTraverseNode(node.left, callback);
-    Tree.preOrderTraverseNode(node.right, callback);
+    Tree.preOrderTraverseRecurseNode(node.left, callback);
+    Tree.preOrderTraverseRecurseNode(node.right, callback);
   }
 
   static inOrderTraverseNode<T>(node: TreeNode<T> | null, callback: (data: T) => void): void {
@@ -224,8 +228,27 @@ export class Tree<T> {
    *
    * 先访问根节点，再访问子树
    */
-  public preOrderTraverse(callback: (data: T) => void): void {
-    Tree.preOrderTraverseNode(this.root, callback);
+  public preOrderTraverseRecurse(callback: (data: T) => void): void {
+    Tree.preOrderTraverseRecurseNode(this.root, callback);
+  }
+
+  /**
+   * 迭代法 前序遍历
+   */
+  public preOrderTraverseIterate(callback: (data: T) => void): void {
+    const helperStack: TreeNode<T>[] = [];
+    helperStack.push(this.root);
+    while (helperStack.length) {
+      const current = helperStack.pop();
+      const currentValue = current.val;
+      callback(currentValue);
+      if (current.right) {
+        helperStack.push(current.right);
+      }
+      if (current.left) {
+        helperStack.push(current.left);
+      }
+    }
   }
 
   /**
@@ -234,8 +257,26 @@ export class Tree<T> {
    * In-Order Traversal
    * 先访问左（右）子树，再访问根节点，最后访问右（左）子树
    */
-  public inOrderTraverse(callback: (data: T) => void): void {
+  public inOrderTraverseRecurse(callback: (data: T) => void): void {
     Tree.inOrderTraverseNode(this.root, callback);
+  }
+
+  /**
+   * 迭代法 中序遍历
+   */
+  public inOrderTraverseIterate(callback: (data: T) => void) {
+    const helpStack: TreeNode<T>[] = [];
+    let current = this.root;
+    while (helpStack.length || current !== null) {
+      if (current) {
+        helpStack.push(current);
+        current = current.left;
+      } else {
+        current = helpStack.pop();
+        callback(current.val);
+        current = current.right;
+      }
+    }
   }
 
   /**
@@ -244,8 +285,32 @@ export class Tree<T> {
    * Post-Order Traversal
    * 先访问子树，再访问根节点
    */
-  public postOrderTraverse(callback: (data: T) => void): void {
+  public postOrderTraverseRecurse(callback: (data: T) => void): void {
     Tree.postOrderTraverseNode(this.root, callback);
+  }
+
+  /**
+   * 迭代法 后序遍历
+   */
+  public postOrderTraverseIterate(callback: (data: T) => void) {
+    const helperStack = new Stack<TreeNode<T>>();
+    let current = this.root;
+    let pre = null;
+    while (helperStack.size || current) {
+      while (current) {
+        helperStack.push(current);
+        current = current.left;
+      }
+      current = helperStack.peek();
+      if (current.right === null || current.right === pre) {
+        callback(current.val);
+        helperStack.pop();
+        pre = current;
+        current = null;
+      } else {
+        current = current.right;
+      }
+    }
   }
 
   /**

@@ -9,21 +9,34 @@ describe('tree', () => {
   const completeBinaryTree = new CompleteBinaryTree([1, 2, 3, 4, 5, 6, 7, 8]);
 
   it('Pre-Order Traverse', () => {
-    const result = [];
-    tree.preOrderTraverse((data) => result.push(data));
-    expect(result).toEqual([5, 3, 1, 4, 7, 8]);
+    const iteration = [];
+    const recursion = [];
+    tree.preOrderTraverseIterate((v) => {
+      iteration.push(v);
+    });
+    tree.preOrderTraverseRecurse((v) => {
+      recursion.push(v);
+    });
+    expect(iteration).toEqual(recursion);
+    expect(iteration).toEqual([5, 3, 1, 4, 7, 8]);
   });
 
   it('In-Order Traverse', () => {
-    const result = [];
-    tree.inOrderTraverse((data) => result.push(data));
-    expect(result).toEqual([1, 3, 4, 5, 7, 8]);
+    const recursion = [];
+    const iteration = [];
+    tree.inOrderTraverseIterate((data) => iteration.push(data));
+    tree.inOrderTraverseRecurse((data) => recursion.push(data));
+    expect(recursion).toEqual(iteration);
+    expect(recursion).toEqual([1, 3, 4, 5, 7, 8]);
   });
 
   it('Post-Order Traverse', () => {
-    const result = [];
-    tree.postOrderTraverse((data) => result.push(data));
-    expect(result).toEqual([1, 4, 3, 8, 7, 5]);
+    const recursion = [];
+    const iteration = [];
+    tree.postOrderTraverseIterate((data) => iteration.push(data));
+    tree.postOrderTraverseRecurse((data) => recursion.push(data));
+    expect(iteration).toEqual([1, 4, 3, 8, 7, 5]);
+    expect(recursion).toEqual(iteration);
   });
 
   it('Level-Order Traverse', () => {

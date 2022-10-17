@@ -29,7 +29,10 @@ export class Stack<T = any> {
     return this._stack;
   }
 
+  /**
+   * @description 获取栈顶元素
+   */
   peek() {
-    return this._stack[0];
+    return this._stack[this._stack.length - 1];
   }
 }
