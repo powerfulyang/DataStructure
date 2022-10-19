@@ -1,4 +1,4 @@
-export class TreeNode<T> {
+export class TreeNode<T = number> {
   public val: T;
 
   public left: TreeNode<T> | null;

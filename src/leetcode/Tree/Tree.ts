@@ -1,5 +1,4 @@
 import { TreeNode } from './TreeNode';
-import { Stack } from '../Stack/Stack';
 
 export class Tree<T> {
   public root: TreeNode<T> | null = null;
@@ -293,21 +292,23 @@ export class Tree<T> {
    * 迭代法 后序遍历
    */
   public postOrderTraverseIterate(callback: (data: T) => void) {
-    const helperStack = new Stack<TreeNode<T>>();
+    const helperStack: TreeNode<T>[] = [];
+    let previousHandled = null;
     let current = this.root;
-    let pre = null;
-    while (helperStack.size || current) {
+    while (helperStack.length || current) {
+      // postOrderRecurse(node.left)
       while (current) {
         helperStack.push(current);
         current = current.left;
       }
-      current = helperStack.peek();
-      if (current.right === null || current.right === pre) {
+      current = helperStack[helperStack.length - 1];
+      if (!current.right || current.right === previousHandled) {
+        current = helperStack.pop();
         callback(current.val);
-        helperStack.pop();
-        pre = current;
+        previousHandled = current;
         current = null;
       } else {
+        // postOrderRecurse(node.right)
         current = current.right;
       }
     }
