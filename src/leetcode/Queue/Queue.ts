@@ -17,7 +17,15 @@ export class Queue<T> {
     this._queue.push(item);
   }
 
+  enqueue(item: T) {
+    this.push(item);
+  }
+
   shift(): T {
     return this._queue.shift();
+  }
+
+  dequeue(): T {
+    return this.shift();
   }
 }
