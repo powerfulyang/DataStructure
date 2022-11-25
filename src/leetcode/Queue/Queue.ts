@@ -28,4 +28,8 @@ export class Queue<T> {
   dequeue(): T {
     return this.shift();
   }
+
+  peek() {
+    return this._queue[0];
+  }
 }

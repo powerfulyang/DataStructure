@@ -18,4 +18,8 @@ describe('Graph', () => {
     const result = graph.dfs(2);
     expect(result).toEqual([2, 0, 1, 3]);
   });
+
+  it('shortestPath', () => {
+    graph.shortestPath(0, 3);
+  });
 });
