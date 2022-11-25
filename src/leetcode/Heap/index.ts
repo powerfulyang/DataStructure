@@ -1,16 +1,16 @@
 /**
- * Heap is array-based data structure.
- * It is a complete binary tree.
- * The root node is the largest element.
+ * + Heap is array-based data structure.
+ * + It is a complete binary tree.
+ * + Priority Queue is a heap.
  */
 export abstract class Heap {
   /**
-   * The array that stores the heap.
+   * @description The array that stores the heap.
    */
   protected _heap: number[] = [];
 
   /**
-   * Get the largest element in the heap.
+   * @description Get the root element in the heap.
    */
   peek(): number {
     return this._heap[0];

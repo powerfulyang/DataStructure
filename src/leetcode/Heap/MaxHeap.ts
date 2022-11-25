@@ -1,9 +1,13 @@
 import { Heap } from './index';
 
+/**
+ * + The root node is the largest element.
+ * + every node is greater than or equal to its children.
+ */
 export class MaxHeap extends Heap {
   /**
-   * Add an element to the heap.
-   * @param element number
+   * @description Add an element to the heap.
+   * @param element - number
    */
   offer(element: number): void {
     this._heap.push(element);
@@ -11,7 +15,7 @@ export class MaxHeap extends Heap {
   }
 
   /**
-   * Remove the largest element from the heap.
+   * @description Remove the largest element from the heap.
    */
   poll(): number {
     const result = this._heap[0];
@@ -25,8 +29,7 @@ export class MaxHeap extends Heap {
   }
 
   /**
-   * Heapify the heap.
-   * @private
+   * @description Heapify the heap.
    */
   protected heapifyUp(): void {
     // 添加元素之后，要重新排列
@@ -64,8 +67,7 @@ export class MaxHeap extends Heap {
   }
 
   /**
-   * Heapify the heap.
-   * @private
+   * @description Heapify the heap.
    */
   protected heapifyDown(): void {
     // 因为 root 弹出，不知道左节点和右节点的哪个大，所以要重新排列
