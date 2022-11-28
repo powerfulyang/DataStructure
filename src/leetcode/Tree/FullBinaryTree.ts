@@ -1,10 +1,10 @@
+import { TreeNode } from './TreeNode';
+
 /**
  * Full Binary Tree 节点个数是奇数
  * 满二叉树，真二叉树
  * #894, https://leetcode.cn/problems/all-possible-full-binary-trees/
  */
-import { TreeNode } from './TreeNode';
-
 export const AllPossibleFullBinaryTrees = (n: number) => {
   const result = [];
   if (n % 2 === 0) {

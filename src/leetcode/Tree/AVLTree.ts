@@ -2,7 +2,7 @@ import type { TreeNode } from './TreeNode';
 import { BinarySearchTree } from './BinarySearchTree';
 
 /**
- * 平衡二叉搜索树
+ * 自平衡二叉搜索树
  */
 export class AVLTree<T> extends BinarySearchTree<T> {
   insert(data: T) {
@@ -10,6 +10,11 @@ export class AVLTree<T> extends BinarySearchTree<T> {
     this.balance(this.root);
   }
 
+  /**
+   * @description 每次只会涉及三个节点
+   * @param node
+   * @private
+   */
   private balance(node: TreeNode<T> | null): void {
     if (node === null) {
       return;

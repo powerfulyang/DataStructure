@@ -5,6 +5,7 @@ import { CurryMultiply } from './CurryMultiply';
 import { ListToTree, TreeToList } from './ListAndTree';
 import { BinarySearchTree } from '../Tree/BinarySearchTree';
 import { binarySearchTreeFindTarget } from './BinarySearchTreeFindTarget';
+import { removeOuterParentheses } from './removeOuterParentheses';
 
 describe('easy', () => {
   it('Roman to Integer', () => {
@@ -84,5 +85,11 @@ describe('easy', () => {
     const tree = new BinarySearchTree([8, 6, 10, 5, 7, 9, 11]);
     const target = 22;
     expect(binarySearchTreeFindTarget(tree.root, target)).toBe(false);
+  });
+
+  it('removeOuterParentheses', () => {
+    expect(removeOuterParentheses('(()())(())')).toBe('()()()');
+    expect(removeOuterParentheses('(()())(())(()(()))')).toBe('()()()()(())');
+    expect(removeOuterParentheses('()()')).toBe('');
   });
 });

@@ -19,6 +19,7 @@ describe('LinkedList', () => {
     const third = linkedList.head.next.next;
     expect(third.value).toEqual(3);
     expect(third.prev.value).toEqual(2);
+    expect(linkedList.getTail()).toHaveProperty('value', 5);
   });
 
   it('Reverse', () => {

@@ -3,6 +3,8 @@ import { BinarySearchTree } from './BinarySearchTree';
 import { AllPossibleFullBinaryTrees } from './FullBinaryTree';
 import { CompleteBinaryTree } from './CompleteBinaryTree';
 import { AVLTree } from './AVLTree';
+import { RedBlackTree } from './RedBlackTree';
+import { Color } from './RedBlackNode';
 
 describe('tree', () => {
   const tree = new Tree([5, 3, 7, 1, 4, null, 8]);
@@ -98,5 +100,18 @@ describe('tree', () => {
     const bst = new BinarySearchTree([1, 2, 3]);
     expect(Tree.isSameTree(avlTree.root, bst.root)).toBe(false);
     expect(avlTree.isBalanced()).toBe(true);
+  });
+
+  it('RBTree', () => {
+    const rbTree = new RedBlackTree();
+    rbTree.add(1, 1);
+    rbTree.add(2, 2);
+    rbTree.add(3, 3);
+    rbTree.add(4, 4);
+    rbTree.add(5, 5);
+    rbTree.add(6, 6);
+    rbTree.add(7, 7);
+    rbTree.add(8, 8);
+    expect(rbTree.root.color).toBe(Color.BLACK);
   });
 });
