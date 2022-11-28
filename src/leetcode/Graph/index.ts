@@ -1,25 +1,37 @@
 import { Queue } from '../Queue/Queue';
+import { PriorityQueue } from '../Heap/PriorityQueue';
 
 export class Graph {
-  private vertices: number;
+  private readonly vertices: number;
 
   /**
    * @description adjacencyList
    */
-  private readonly adj: number[][];
+  private readonly adj: Map<number, number>[];
 
   constructor(vertices: number) {
     this.vertices = vertices;
     this.adj = [];
     for (let i = 0; i < vertices; i++) {
-      this.adj[i] = [];
+      this.adj[i] = new Map<number, number>();
     }
   }
 
-  addEdge(v: number, w: number) {
-    this.adj[v].push(w);
+  /**
+   * @description add edge
+   * @param u - start vertex
+   * @param v - end vertex
+   * @param w - weight
+   */
+  addEdge(u: number, v: number, w: number = 0) {
+    this.adj[u].set(v, w);
+    this.adj[v].set(u, w);
   }
 
+  /**
+   * @description breadth first search
+   * @param s - start vertex
+   */
   bfs(s: number) {
     const ans = [];
     const visited = new Array(this.vertices).fill(false);
@@ -29,17 +41,20 @@ export class Graph {
     while (!queue.isEmpty()) {
       const v = queue.dequeue();
       ans.push(v);
-      for (let i = 0; i < this.adj[v].length; i++) {
-        const w = this.adj[v][i];
-        if (!visited[w]) {
-          visited[w] = true;
-          queue.enqueue(w);
+      for (const [key] of this.adj[v]) {
+        if (!visited[key]) {
+          visited[key] = true;
+          queue.enqueue(key);
         }
       }
     }
     return ans;
   }
 
+  /**
+   * @description depth first search
+   * @param s - start vertex
+   */
   dfs(s: number) {
     const visited = new Array(this.vertices).fill(false);
     const ans = [];
@@ -51,10 +66,9 @@ export class Graph {
     const tmp = visited;
     tmp[v] = true;
     ans.push(v);
-    for (let i = 0; i < this.adj[v].length; i++) {
-      const w = this.adj[v][i];
-      if (!tmp[w]) {
-        this.dfsUtil(w, tmp, ans);
+    for (const [key] of this.adj[v]) {
+      if (!tmp[key]) {
+        this.dfsUtil(key, tmp, ans);
       }
     }
   }
@@ -62,44 +76,21 @@ export class Graph {
   /**
    * @description dijkstra implementation
    * @param s - start vertex
-   * @param d - destination vertex
    */
-  shortestPath(s: number, d: number) {
-    if (s === d) {
-      // Delete these four lines if
-      console.log(s); // you want to look for a cycle
-      return; // when the source is equal to
-    } // the target.
-    const queue = [s];
-    const visited = { [s]: true };
-    const predecessor = {};
-    let tail = 0;
-    while (tail < queue.length) {
-      let u = queue[tail++]; // Pop a vertex off the queue.
-      const neighbors = this.adj[u];
-      for (let i = 0; i < neighbors.length; ++i) {
-        const v = neighbors[i];
-        if (visited[v]) {
-          // eslint-disable-next-line no-continue
-          continue;
+  shortestPath(s: number) {
+    const pg = new PriorityQueue();
+    const dist = new Array<number>(this.vertices).fill(Number.MAX_SAFE_INTEGER);
+    dist[s] = 0;
+    pg.enqueue(s, 0);
+    while (!pg.isEmpty()) {
+      const u = pg.dequeue();
+      for (const [v, w] of this.adj[u]) {
+        if (dist[u] + w < dist[v]) {
+          dist[v] = dist[u] + w;
+          pg.enqueue(v, dist[v]);
         }
-        visited[v] = true;
-        if (v === d) {
-          // Check if the path is complete.
-          const path = [v]; // If so, backtrack through the path.
-          while (u !== s) {
-            path.push(u);
-            u = predecessor[u];
-          }
-          path.push(u);
-          path.reverse();
-          console.log(path.join(','));
-          return;
-        }
-        predecessor[v] = u;
-        queue.push(v);
       }
     }
-    console.log(`there is no path from ${s} to ${d}`);
+    return dist;
   }
 }
