@@ -6,6 +6,7 @@ import { ListToTree, TreeToList } from './ListAndTree';
 import { BinarySearchTree } from '../Tree/BinarySearchTree';
 import { binarySearchTreeFindTarget } from './BinarySearchTreeFindTarget';
 import { removeOuterParentheses } from './removeOuterParentheses';
+import { divide } from './divide';
 
 describe('easy', () => {
   it('Roman to Integer', () => {
@@ -91,5 +92,13 @@ describe('easy', () => {
     expect(removeOuterParentheses('(()())(())')).toBe('()()()');
     expect(removeOuterParentheses('(()())(())(()(()))')).toBe('()()()()(())');
     expect(removeOuterParentheses('()()')).toBe('');
+  });
+
+  it('整数除法', () => {
+    expect(divide(10, 3)).toBe(3);
+    expect(divide(7, -3)).toBe(-2);
+    expect(divide(0, 1)).toBe(0);
+    expect(divide(1, 1)).toBe(1);
+    expect(divide(-2147483648, -1)).toBe(2147483647);
   });
 });
