@@ -7,6 +7,7 @@ import { BinarySearchTree } from '../Tree/BinarySearchTree';
 import { binarySearchTreeFindTarget } from './BinarySearchTreeFindTarget';
 import { removeOuterParentheses } from './removeOuterParentheses';
 import { divide } from './divide';
+import { KthLargest } from './kthLargest';
 
 describe('easy', () => {
   it('Roman to Integer', () => {
@@ -100,5 +101,13 @@ describe('easy', () => {
     expect(divide(0, 1)).toBe(0);
     expect(divide(1, 1)).toBe(1);
     expect(divide(-2147483648, -1)).toBe(2147483647);
+  });
+
+  it('二叉搜索树的第k大节点', () => {
+    const tree = new BinarySearchTree([3, 1, 4, null, 2]);
+    expect(KthLargest(tree.root, 1)).toBe(4);
+    expect(KthLargest(tree.root, 2)).toBe(3);
+    expect(KthLargest(tree.root, 3)).toBe(2);
+    expect(KthLargest(tree.root, 4)).toBe(1);
   });
 });
