@@ -2,6 +2,7 @@ import { BubbleSort } from './BubbleSort';
 import { QuickSort } from './QuickSort';
 import { CountingSort } from './CountingSort';
 import { BucketSort } from './BucketSort';
+import { SelectionSort } from './SelectionSort';
 
 describe('sort', () => {
   const unsortedArray = [1, 3, -1, -3, 5, 3, 6, 7];
@@ -21,5 +22,9 @@ describe('sort', () => {
 
   it('BucketSort', () => {
     expect(BucketSort(unsortedArray, 3)).toEqual(sortedArray);
+  });
+
+  it('SelectionSort', () => {
+    expect(SelectionSort(unsortedArray)).toEqual(sortedArray);
   });
 });
