@@ -1,19 +1,14 @@
 export const BubbleSort = (array: number[]) => {
-  const tmp = [...array];
-
-  let swapped = false;
-  for (let i = 0; i < tmp.length; i++) {
-    swapped = false;
-    for (let j = 0; j < tmp.length - i; j++) {
-      if (tmp[j] > tmp[j + 1]) {
-        [tmp[j + 1], tmp[j]] = [tmp[j], tmp[j + 1]];
-        swapped = true;
+  let sorted = false;
+  while (!sorted) {
+    sorted = true;
+    for (let i = 0; i < array.length - 1; i++) {
+      if (array[i] > array[i + 1]) {
+        sorted = false;
+        // eslint-disable-next-line no-param-reassign
+        [array[i], array[i + 1]] = [array[i + 1], array[i]];
       }
     }
-    if (swapped === false) {
-      return tmp;
-    }
   }
-
-  return tmp;
+  return array;
 };

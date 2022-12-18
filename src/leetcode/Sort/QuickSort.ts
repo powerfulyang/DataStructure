@@ -1,25 +1,15 @@
 // Divide and Conquer
 export const QuickSort = (array: number[]) => {
-  const tmp = [...array];
-  // base
-  if (array.length <= 1) {
-    return array;
-  }
-  const leftArray = [];
-  const rightArray = [];
-  const pivot = tmp.shift();
-  const centerArray = [pivot];
-  while (tmp.length) {
-    const current = tmp.shift();
-    if (current === pivot) {
-      centerArray.push(current);
-    } else if (current > pivot) {
-      rightArray.push(current);
+  if (array.length <= 1) return array;
+  const pivot = array[array.length - 1];
+  const left = [];
+  const right = [];
+  for (let i = 0; i < array.length - 1; i++) {
+    if (array[i] < pivot) {
+      left.push(array[i]);
     } else {
-      leftArray.push(current);
+      right.push(array[i]);
     }
   }
-  const left = QuickSort(leftArray);
-  const right = QuickSort(rightArray);
-  return left.concat(centerArray).concat(right);
+  return [...QuickSort(left), pivot, ...QuickSort(right)];
 };
