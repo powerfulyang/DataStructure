@@ -1,5 +1,6 @@
 /**
- * #59, https://leetcode.cn/problems/spiral-matrix-ii/
+ * @description \#59, https://leetcode.cn/problems/spiral-matrix-ii/
+ * @summary 螺旋矩阵 II
  */
 export const SpiralMatrixII = (n: number): number[][] => {
   // n = 4
@@ -12,7 +13,7 @@ export const SpiralMatrixII = (n: number): number[][] => {
    *
    */
   // 创建 n x n 的二维数组
-  const arr = new Array(n).fill(null).map(() => []);
+  const arr = Array.from({ length: n }).map(() => []);
 
   let k = 1;
   for (let i = 0; i < n; i++) {

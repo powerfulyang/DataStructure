@@ -4,6 +4,9 @@ import { LRUCache } from './LRUCache';
 import { Tree } from '../Tree/Tree';
 import { largestValues } from './largestValues';
 import { findMinDifference } from './findMinDifference';
+import { productExceptSelf } from './productExceptSelf';
+import { isValidSudoku } from './isValidSudoku';
+import { longestConsecutive } from './longestConsecutive';
 
 describe('Medium', () => {
   it('minimum-consecutive-cards-to-pick-up', () => {
@@ -36,5 +39,30 @@ describe('Medium', () => {
   it('findMinDifference', () => {
     expect(findMinDifference(['23:59', '00:00'])).toBe(1);
     expect(findMinDifference(['00:00', '21:00'])).toBe(180);
+  });
+
+  it('productExceptSelf', () => {
+    expect(productExceptSelf([1, 2, 3, 4])).toEqual([24, 12, 8, 6]);
+    expect(productExceptSelf([1, 2, 3, 4, 5])).toEqual([120, 60, 40, 30, 24]);
+  });
+
+  it('isValidSudoku', () => {
+    expect(
+      isValidSudoku([
+        ['5', '3', '.', '.', '7', '.', '.', '.', '.'],
+        ['6', '.', '.', '1', '9', '5', '.', '.', '.'],
+        ['.', '9', '8', '.', '.', '.', '.', '6', '.'],
+        ['8', '.', '.', '.', '6', '.', '.', '.', '3'],
+        ['4', '.', '.', '8', '.', '3', '.', '.', '1'],
+        ['7', '.', '.', '.', '2', '.', '.', '.', '6'],
+        ['.', '6', '.', '.', '.', '.', '2', '8', '.'],
+        ['.', '.', '.', '4', '1', '9', '.', '.', '5'],
+        ['.', '.', '.', '.', '8', '.', '.', '7', '9'],
+      ]),
+    ).toBe(true);
+  });
+
+  it('longestConsecutive', () => {
+    expect(longestConsecutive([100, 4, 200, 1, 3, 2])).toBe(4);
   });
 });

@@ -7,6 +7,7 @@ module.exports = {
     rules: {
       ...override.rules,
       'no-plusplus': 'off',
+      'no-continue': 'off',
     },
   })),
 };
