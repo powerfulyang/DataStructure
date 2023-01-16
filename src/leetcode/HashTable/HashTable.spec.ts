@@ -1,6 +1,6 @@
 import { RansomNote } from './RansomNote';
 import { ThreeSum } from './ThreeSum';
-import { TopKFrequentElements } from './TopKFrequentElements';
+import { topKFrequent } from './TopKFrequentElements';
 import { FourSumII } from './FourSumII';
 import { TwoSum } from './TwoSum';
 import { FourSum } from './FourSum';
@@ -12,7 +12,7 @@ describe('hash table', () => {
   });
 
   it('TopKFrequentElements', () => {
-    expect(TopKFrequentElements([1, 1, 1, 2, 2, 3], 2)).toIncludeSameMembers([1, 2]);
+    expect(topKFrequent([1, 1, 1, 2, 2, 2, 3, 3, 3], 2)).toIncludeSameMembers([1, 2]);
   });
 
   it('TwoSum', () => {

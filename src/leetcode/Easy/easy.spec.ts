@@ -9,6 +9,7 @@ import { removeOuterParentheses } from './removeOuterParentheses';
 import { divide } from './divide';
 import { KthLargest } from './kthLargest';
 import { fib } from './fib';
+import { isAnagram } from './isAnagram';
 
 describe('easy', () => {
   it('Roman to Integer', () => {
@@ -124,5 +125,10 @@ describe('easy', () => {
     expect(fib(8)).toBe(21);
     expect(fib(9)).toBe(34);
     expect(fib(10)).toBe(55);
+  });
+
+  it('isAnagram', () => {
+    expect(isAnagram('anagram', 'nagaram')).toBe(true);
+    expect(isAnagram('rat', 'car')).toBe(false);
   });
 });
