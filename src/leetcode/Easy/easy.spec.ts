@@ -10,6 +10,7 @@ import { divide } from './divide';
 import { KthLargest } from './kthLargest';
 import { fib } from './fib';
 import { isAnagram } from './isAnagram';
+import { isPalindromeString } from './isPalindromeString';
 
 describe('easy', () => {
   it('Roman to Integer', () => {
@@ -130,5 +131,9 @@ describe('easy', () => {
   it('isAnagram', () => {
     expect(isAnagram('anagram', 'nagaram')).toBe(true);
     expect(isAnagram('rat', 'car')).toBe(false);
+  });
+
+  it('isPalindromeString', () => {
+    expect(isPalindromeString('a bba')).toBe(true);
   });
 });

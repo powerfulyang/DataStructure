@@ -7,6 +7,8 @@ import { findMinDifference } from './findMinDifference';
 import { productExceptSelf } from './productExceptSelf';
 import { isValidSudoku } from './isValidSudoku';
 import { longestConsecutive } from './longestConsecutive';
+import { threeSum } from './threeSum';
+import { maxArea } from './maxArea';
 
 describe('Medium', () => {
   it('minimum-consecutive-cards-to-pick-up', () => {
@@ -64,5 +66,16 @@ describe('Medium', () => {
 
   it('longestConsecutive', () => {
     expect(longestConsecutive([100, 4, 200, 1, 3, 2])).toBe(4);
+  });
+
+  it('threeSum', () => {
+    expect(threeSum([-1, 0, 1, 2, -1, -4])).toEqual([
+      [-1, -1, 2],
+      [-1, 0, 1],
+    ]);
+  });
+
+  it('maxArea', () => {
+    expect(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])).toBe(49);
   });
 });

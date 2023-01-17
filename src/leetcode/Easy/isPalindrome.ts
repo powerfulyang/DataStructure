@@ -10,17 +10,20 @@ export class ListNode {
 }
 
 /**
+ * @description \#234 回文链表
  * @see https://leetcode.cn/problems/palindrome-linked-list-lcci/
  * @param head - 链表头节点
  */
 export const isPalindrome = (head: ListNode) => {
   let node = head;
+  // 用数组存储链表的值
   const values = [];
   while (node !== null) {
     values.push(node.val);
     node = node.next;
   }
-  for (let i = 0, j = values.length - 1; i < j; ++i, --j) {
+  // 用双指针判断是否是回文
+  for (let i = 0, j = values.length - 1; i < j; i++, j--) {
     if (values[i] !== values[j]) {
       return false;
     }
