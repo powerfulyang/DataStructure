@@ -1,6 +1,8 @@
 import { MinimumSizeSubarraySum } from './index';
-import { SlidingWindowMaximum } from './SlidingWindowMaximum';
-import { LongestSubstringWithoutRepeatingCharacters } from './LongestSubstringWithoutRepeatingCharacters';
+import { maxSlidingWindow } from './maxSlidingWindow';
+import { LengthOfLongestSubstring } from './lengthOfLongestSubstring';
+import { characterReplacement } from './characterReplacement';
+import { checkInclusion } from './checkInclusion';
 
 describe('SlidingWindow', () => {
   it('MinimumSizeSubarraySum', () => {
@@ -8,12 +10,22 @@ describe('SlidingWindow', () => {
   });
 
   it('SlidingWindowMaximum', () => {
-    expect(SlidingWindowMaximum([1, 3, -1, -3, 5, 3, 6, 7], 3)).toEqual([3, 3, 5, 5, 6, 7]);
+    expect(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3)).toEqual([3, 3, 5, 5, 6, 7]);
   });
 
   it('LongestSubstringWithoutRepeatingCharacters', () => {
-    expect(LongestSubstringWithoutRepeatingCharacters('abcabcbb')).toEqual(3);
-    expect(LongestSubstringWithoutRepeatingCharacters('bbbbb')).toEqual(1);
-    expect(LongestSubstringWithoutRepeatingCharacters('pwwkew')).toEqual(3);
+    expect(LengthOfLongestSubstring('abcabcbb')).toEqual(3);
+    expect(LengthOfLongestSubstring('bbbbb')).toEqual(1);
+    expect(LengthOfLongestSubstring('pwwkew')).toEqual(3);
+  });
+
+  it('characterReplacement', () => {
+    expect(characterReplacement('ABAB', 2)).toEqual(4);
+    expect(characterReplacement('AABABBA', 1)).toEqual(4);
+  });
+
+  it('checkInclusion', () => {
+    expect(checkInclusion('ab', 'eidbaooo')).toEqual(true);
+    expect(checkInclusion('ab', 'eidboaoo')).toEqual(false);
   });
 });
