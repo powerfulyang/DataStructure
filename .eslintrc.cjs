@@ -8,6 +8,7 @@ module.exports = {
       ...override.rules,
       'no-plusplus': 'off',
       'no-continue': 'off',
+      'no-param-reassign': 'off',
     },
   })),
 };

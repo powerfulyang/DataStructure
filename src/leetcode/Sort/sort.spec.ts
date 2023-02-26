@@ -1,5 +1,5 @@
 import { BubbleSort } from './BubbleSort';
-import { QuickSort } from './QuickSort';
+import { QuickSort, QuickSortIterative } from './QuickSort';
 import { CountingSort } from './CountingSort';
 import { BucketSort } from './BucketSort';
 import { SelectionSort } from './SelectionSort';
@@ -53,5 +53,9 @@ describe('sort', () => {
     // not support negative number
     const u = [1, 3, 5, 3, 6, 7];
     expect(RadixSort(u)).toEqual([1, 3, 3, 5, 6, 7]);
+  });
+
+  it('QuickSortIterative', () => {
+    expect(QuickSortIterative(unsortedArray)).toEqual(sortedArray);
   });
 });
