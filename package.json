@@ -2,8 +2,8 @@
   "name": "@powerfulyang/leraning-notes",
   "version": "1.0.0",
   "scripts": {
-    "postprepare": "husky install",
-    "precommit": "npm run tsc-check && lint-staged",
+    "prepare": "husky install",
+    "precommit": "lint-staged",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "tsc-check": "tsc --noEmit"
@@ -11,13 +11,16 @@
   "author": "powerfulyang <i@powerfulyang.com>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@powerfulyang/lint": "latest",
-    "@types/lodash": "latest",
-    "jest-extended": "latest",
-    "typescript": "latest"
+    "@jest/globals": "29.5.0",
+    "@powerfulyang/lint": "3.2.1",
+    "@types/lodash": "4.14.194",
+    "@types/node": "18.16.1",
+    "expect": "29.5.0",
+    "jest-extended": "3.2.4",
+    "typescript": "5.0.4"
   },
   "dependencies": {
-    "lodash": "latest",
-    "rxjs": "latest"
+    "lodash": "4.17.21",
+    "rxjs": "7.8.0"
   }
 }

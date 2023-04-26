@@ -1,3 +1,4 @@
+import { describe, expect, it } from '@jest/globals';
 import { getNext, ImplementStrStr } from './ImplementStrStr';
 import { RepeatedSubstringPattern } from './RepeatedSubstringPattern';
 

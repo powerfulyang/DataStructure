@@ -1,8 +1,9 @@
-import { MinimumSizeSubarraySum } from './index';
-import { maxSlidingWindow } from './maxSlidingWindow';
-import { LengthOfLongestSubstring } from './lengthOfLongestSubstring';
+import { describe, expect, it } from '@jest/globals';
 import { characterReplacement } from './characterReplacement';
 import { checkInclusion } from './checkInclusion';
+import { MinimumSizeSubarraySum } from './index';
+import { LengthOfLongestSubstring } from './lengthOfLongestSubstring';
+import { maxSlidingWindow } from './maxSlidingWindow';
 
 describe('SlidingWindow', () => {
   it('MinimumSizeSubarraySum', () => {

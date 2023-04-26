@@ -1,3 +1,5 @@
+import { describe, expect, it } from '@jest/globals';
+
 describe('Array', () => {
   it('concat', () => {
     expect([1, 2, 3].concat([4, 5, 6])).toEqual([1, 2, 3, 4, 5, 6]);

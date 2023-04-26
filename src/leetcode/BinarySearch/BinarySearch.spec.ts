@@ -1,5 +1,6 @@
-import { MedianOfTwoSortedArrays } from './median-of-two-sorted-arrays';
+import { describe, expect, it } from '@jest/globals';
 import { leftBound, rightBound } from './index';
+import { MedianOfTwoSortedArrays } from './median-of-two-sorted-arrays';
 
 describe('BinarySearch', () => {
   it('median-of-two-sorted-arrays', () => {

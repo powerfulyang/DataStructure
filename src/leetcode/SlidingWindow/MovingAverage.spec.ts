@@ -36,6 +36,7 @@
  * *   `-105 <= val <= 105`
  * *   最多调用 `next` 方法 `104` 次
  */
+import { describe, expect, it } from '@jest/globals';
 import { FixedLengthArray } from './FixedLengthArray';
 
 export class MovingAverage extends FixedLengthArray<number> {

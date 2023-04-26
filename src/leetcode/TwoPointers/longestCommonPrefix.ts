@@ -15,13 +15,34 @@
  * Note:
  * All given inputs are in lowercase letters a-z.
  */
-export const LongestCommonPrefix = (strs: string[]): string => {
-  if (strs.length === 0) return '';
+export const longestCommonPrefix_bad = (strs: string[]): string => {
+  let i = 0;
+  let ans = '';
+
+  while (i >= 0) {
+    const index = i;
+    const flag = strs.slice(1).some((str) => {
+      return str[index] !== strs[0][index] || !str[index] || !strs[0][index];
+    });
+    if (flag) {
+      i = -1;
+    } else {
+      ans += strs[0][i];
+      i++;
+    }
+  }
+
+  return ans;
+};
+
+export const longestCommonPrefix = (strs: string[]): string => {
   let prefix = strs[0];
   for (let i = 1; i < strs.length; i++) {
     while (strs[i].indexOf(prefix) !== 0) {
-      prefix = prefix.slice(0, prefix.length - 1);
-      if (prefix === '') return '';
+      prefix = prefix.substring(0, prefix.length - 1);
+      if (prefix.length === 0) {
+        return '';
+      }
     }
   }
   return prefix;

@@ -1,6 +1,7 @@
+import { describe, expect, it } from '@jest/globals';
+import { camel2Underline, underline2Camel } from './camel';
 import { InstanceOf } from './instanceof';
 import { trim } from './trim';
-import { camel2Underline, underline2Camel } from './camel';
 
 describe('handwrite', () => {
   it('InstanceOf', () => {

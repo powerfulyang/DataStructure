@@ -1,10 +1,11 @@
-import { Tree } from './Tree';
-import { BinarySearchTree } from './BinarySearchTree';
-import { AllPossibleFullBinaryTrees } from './FullBinaryTree';
-import { CompleteBinaryTree } from './CompleteBinaryTree';
+import { describe, expect, it } from '@jest/globals';
 import { AVLTree } from './AVLTree';
-import { RedBlackTree } from './RedBlackTree';
+import { BinarySearchTree } from './BinarySearchTree';
+import { CompleteBinaryTree } from './CompleteBinaryTree';
+import { AllPossibleFullBinaryTrees } from './FullBinaryTree';
 import { Color } from './RedBlackNode';
+import { RedBlackTree } from './RedBlackTree';
+import { Tree } from './Tree';
 
 describe('tree', () => {
   const tree = new Tree([5, 3, 7, 1, 4, null, 8]);

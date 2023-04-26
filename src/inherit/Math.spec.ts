@@ -1,3 +1,5 @@
+import { describe, expect, it } from '@jest/globals';
+
 describe('Math', () => {
   it('去尾法', () => {
     expect(Math.trunc(3.5)).toBe(3);

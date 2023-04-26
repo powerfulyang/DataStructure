@@ -1,7 +1,8 @@
-import { defaultIfEmpty, every, take } from 'rxjs/operators';
+import { beforeAll, describe, expect, it, jest } from '@jest/globals';
 import { AsyncSubject, BehaviorSubject, interval, of, ReplaySubject } from 'rxjs';
-import { combineLatestAllExample } from './combineLatestAll';
+import { defaultIfEmpty, every, take } from 'rxjs/operators';
 import { combineLatestExample } from './combineLatest';
+import { combineLatestAllExample } from './combineLatestAll';
 import { mergeAllExample } from './mergeAll';
 
 describe('rxjs', () => {

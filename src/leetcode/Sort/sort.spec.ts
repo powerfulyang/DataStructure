@@ -1,13 +1,14 @@
+import { describe, expect, it } from '@jest/globals';
 import { BubbleSort } from './BubbleSort';
-import { QuickSort, QuickSortIterative } from './QuickSort';
-import { CountingSort } from './CountingSort';
 import { BucketSort } from './BucketSort';
-import { SelectionSort } from './SelectionSort';
-import { InsertionSort } from './InsertionSort';
+import { CountingSort } from './CountingSort';
 import { HeapSort } from './HeapSort';
+import { InsertionSort } from './InsertionSort';
 import { MergeSort } from './MergeSort';
-import { ShellSort } from './ShellSort';
+import { QuickSort, QuickSortIterative } from './QuickSort';
 import { RadixSort } from './RadixSort';
+import { SelectionSort } from './SelectionSort';
+import { ShellSort } from './ShellSort';
 
 describe('sort', () => {
   const unsortedArray = [1, 3, -1, -3, 5, 3, 6, 7];

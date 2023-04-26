@@ -1,3 +1,5 @@
+import { describe, expect, it } from '@jest/globals';
+
 describe('Symbol', () => {
   it('global symbol', () => {
     const s1 = Symbol.for('foo');

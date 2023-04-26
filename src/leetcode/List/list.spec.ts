@@ -1,5 +1,6 @@
-import { InterpolationSearch } from './InterpolationSearch';
+import { describe, expect, it } from '@jest/globals';
 import { RemoveDuplicatesFromSortedArray, RemoveElement } from '../TwoPointers';
+import { InterpolationSearch } from './InterpolationSearch';
 
 describe('List', () => {
   it('interpolation search', () => {

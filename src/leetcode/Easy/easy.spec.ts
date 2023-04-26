@@ -1,16 +1,17 @@
+import { describe, expect, it } from '@jest/globals';
 import { cloneDeep } from 'lodash';
-import { romanToInt } from './RomanToInteger';
-import { strToObject } from './StrToObject';
-import { CurryMultiply } from './CurryMultiply';
-import { ListToTree, TreeToList } from './ListAndTree';
 import { BinarySearchTree } from '../Tree/BinarySearchTree';
 import { binarySearchTreeFindTarget } from './BinarySearchTreeFindTarget';
-import { removeOuterParentheses } from './removeOuterParentheses';
+import { CurryMultiply } from './CurryMultiply';
 import { divide } from './divide';
-import { KthLargest } from './kthLargest';
 import { fib } from './fib';
 import { isAnagram } from './isAnagram';
 import { isPalindromeString } from './isPalindromeString';
+import { KthLargest } from './kthLargest';
+import { ListToTree, TreeToList } from './ListAndTree';
+import { removeOuterParentheses } from './removeOuterParentheses';
+import { romanToInt } from './RomanToInteger';
+import { strToObject } from './StrToObject';
 
 describe('easy', () => {
   it('Roman to Integer', () => {

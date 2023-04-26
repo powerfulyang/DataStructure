@@ -15,7 +15,12 @@
     "noImplicitThis": false,
     "strictNullChecks": false,
     "strict": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "skipLibCheck": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*.ts"]
 }

@@ -1,14 +1,15 @@
-import { minimumCardPickup } from './MinimumCardPickup';
-import { maximumSwap } from './maximumSwap';
-import { LRUCache } from './LRUCache';
+import { describe, expect, it } from '@jest/globals';
 import { Tree } from '../Tree/Tree';
-import { largestValues } from './largestValues';
 import { findMinDifference } from './findMinDifference';
-import { productExceptSelf } from './productExceptSelf';
 import { isValidSudoku } from './isValidSudoku';
+import { largestValues } from './largestValues';
 import { longestConsecutive } from './longestConsecutive';
-import { threeSum } from './threeSum';
+import { LRUCache } from './LRUCache';
 import { maxArea } from './maxArea';
+import { maximumSwap } from './maximumSwap';
+import { minimumCardPickup } from './MinimumCardPickup';
+import { productExceptSelf } from './productExceptSelf';
+import { threeSum } from './threeSum';
 
 describe('Medium', () => {
   it('minimum-consecutive-cards-to-pick-up', () => {

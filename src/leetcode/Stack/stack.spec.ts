@@ -1,7 +1,8 @@
-import { StackImplementByQueue } from './StackImplementByQueue';
-import { ValidParentheses } from './ValidParentheses';
+import { describe, expect, it } from '@jest/globals';
 import { EvaluateReversePolishNotation } from './EvaluateReversePolishNotation';
 import { SimplifyPath } from './SimplifyPath';
+import { StackImplementByQueue } from './StackImplementByQueue';
+import { ValidParentheses } from './ValidParentheses';
 
 describe('stack', () => {
   it('StackImplementByQueue', () => {

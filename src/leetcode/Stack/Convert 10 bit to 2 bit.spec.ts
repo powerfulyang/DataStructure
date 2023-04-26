@@ -1,6 +1,7 @@
 /**
  * convert 10 bit numbers to 2 bit
  */
+import { describe, expect, it } from '@jest/globals';
 import { Stack } from './Stack';
 
 export const convert = (origin: number) => {
