@@ -1,3 +1,4 @@
+import { Trie } from '@/leetcode/Tree/Trie';
 import { describe, expect, it } from '@jest/globals';
 import { AVLTree } from './AVLTree';
 import { BinarySearchTree } from './BinarySearchTree';
@@ -114,5 +115,19 @@ describe('tree', () => {
     rbTree.add(7, 7);
     rbTree.add(8, 8);
     expect(rbTree.root.color).toBe(Color.BLACK);
+  });
+
+  it('Trie', () => {
+    function longestCommonPrefix(strs: string[]): string {
+      const trie = new Trie();
+
+      for (const word of strs) {
+        trie.insert(word);
+      }
+
+      return trie.longestCommonPrefix();
+    }
+    const res = longestCommonPrefix(['flower', 'flow', 'flight']);
+    expect(res).toBe('fl');
   });
 });
