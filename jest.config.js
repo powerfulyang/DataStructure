@@ -11,7 +11,7 @@ const config = {
   transform: {
     '^.+\\.ts$': '@swc/jest',
   },
-  setupFilesAfterEnv: ['jest-extended/all'],
+  setupFilesAfterEnv: ['@powerfulyang/jest-extended/all'],
 };
 
 module.exports = config;
