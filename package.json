@@ -14,7 +14,7 @@
     "@jest/globals": "29.5.0",
     "@powerfulyang/jest-extended": "3.2.6",
     "@powerfulyang/lint": "3.2.1",
-    "@types/lodash": "4.14.194",
+    "@types/lodash": "4.14.195",
     "@types/node": "18.16.1",
     "expect": "29.5.0",
     "typescript": "5.0.4"
