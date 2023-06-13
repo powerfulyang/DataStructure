@@ -15,7 +15,7 @@
     "@powerfulyang/jest-extended": "3.2.6",
     "@powerfulyang/lint": "3.2.1",
     "@types/lodash": "4.14.194",
-    "@types/node": "18.16.1",
+    "@types/node": "18.16.18",
     "expect": "29.5.0",
     "typescript": "5.0.4"
   },
