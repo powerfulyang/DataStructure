@@ -74,7 +74,7 @@ export class MaxHeap extends Heap {
     let index = 0;
     /**
      * index = 0; root node.
-     * 由于是满二叉树
+     * 完全二叉树
      * 左右子节点的索引是 index * 2 + 1 和 index * 2 + 2
      */
     while (index < this._heap.length) {
