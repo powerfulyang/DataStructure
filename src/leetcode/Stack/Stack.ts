@@ -32,7 +32,7 @@ export class Stack<T = any> {
   /**
    * @description 获取栈顶元素
    */
-  peek() {
+  last() {
     return this._stack[this._stack.length - 1];
   }
 }
