@@ -1,37 +1,40 @@
 import { TrieNode } from '@/trie/TrieNode';
 
 export class TrieTree {
-  private root: TrieNode = new TrieNode();
+  constructor(private readonly root = new TrieNode()) {}
 
-  public insert(word: string): void {
-    let cur = this.root;
+  insert(word: string) {
+    let current = this.root;
     for (const char of word) {
-      if (!cur.next.has(char)) {
-        cur.next.set(char, new TrieNode());
+      const { children } = current;
+      if (!children.has(char)) {
+        children.set(char, new TrieNode());
       }
-      cur = cur.next.get(char);
+      current = children.get(char);
     }
-    cur.isEnd = true;
+    current.isEnd = true;
   }
 
-  public search(word: string): boolean {
-    let cur = this.root;
+  search(word: string) {
+    let current = this.root;
     for (const char of word) {
-      if (!cur.next.has(char)) {
+      const { children } = current;
+      if (!children.has(char)) {
         return false;
       }
-      cur = cur.next.get(char);
+      current = children.get(char);
     }
-    return cur.isEnd;
+    return current.isEnd;
   }
 
-  public startsWith(prefix: string): boolean {
-    let cur = this.root;
-    for (const char of prefix) {
-      if (!cur.next.has(char)) {
+  startWith(word: string) {
+    let current = this.root;
+    for (const char of word) {
+      const { children } = current;
+      if (!children.has(char)) {
         return false;
       }
-      cur = cur.next.get(char);
+      current = children.get(char);
     }
     return true;
   }

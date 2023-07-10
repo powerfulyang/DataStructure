@@ -1,5 +1,3 @@
 export class TrieNode {
-  public isEnd: boolean = false;
-
-  public next: Map<string, TrieNode> = new Map();
+  constructor(public isEnd = false, public children = new Map<string, TrieNode>()) {}
 }
