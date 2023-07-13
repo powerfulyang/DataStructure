@@ -1,3 +1,4 @@
+import { longestPalindrome } from '@/leetcode/Medium/longestPalindrome';
 import { describe, expect, it } from '@jest/globals';
 import { Tree } from '../Tree/Tree';
 import { findMinDifference } from './findMinDifference';
@@ -78,5 +79,10 @@ describe('Medium', () => {
 
   it('maxArea', () => {
     expect(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7])).toBe(49);
+  });
+
+  it('longestPalindrome', () => {
+    const s = 'babad';
+    expect(longestPalindrome(s)).toBe('aba');
   });
 });
