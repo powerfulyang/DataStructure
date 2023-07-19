@@ -9,6 +9,7 @@ module.exports = {
       'no-plusplus': 'off',
       'no-continue': 'off',
       'no-param-reassign': 'off',
+      'no-bitwise': 'off',
     },
   })),
 };
